@@ -81,7 +81,6 @@ export default class App extends Component {
               let zoom = this.olmap.getView().getZoom();
               this.setState({ center, zoom, parkData: parsedData, loaded: true });
             });
-            console.log(parsedData);
             // this.setState((state, props) => {
             //   return { parkData: parsedData, loaded: true };
             // });
@@ -107,9 +106,7 @@ export default class App extends Component {
   }
 
   renderParkAreas() {
-    console.log("Park Areas");
     const parkSpaces = this.state.parkData[this.state.selectedDistrict];
-    console.log(parkSpaces);
     return Object.keys(parkSpaces).map((parkID) => {
       let parkSpace = parkSpaces[parkID];
       return (
@@ -180,26 +177,5 @@ export default class App extends Component {
   }
 }
 
-
-
-
-// fetch('https://api.ibb.gov.tr/ispark/Park')
-//   .then(
-//     function (response) {
-//       if (response.status !== 200) {
-//         console.log('Looks like there was a problem. Status Code: ' +
-//           response.status);
-//         return;
-//       }
-//       response.json().then(function (data) {
-//         console.log(data);
-//         parkData = data;
-
-//       });
-//     }
-//   )
-//   .catch(function (err) {
-//     console.log('Fetch Error :-S', err);
-//   });
 
 
