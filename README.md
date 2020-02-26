@@ -10,3 +10,8 @@ In deployment, I followed the following steps
 * git commit -m "react-create-app on Heroku"
 * git push heroku master
 * heroku open
+
+To run the project in local:
+* download the project
+* npm install
+* npm start
